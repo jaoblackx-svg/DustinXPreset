@@ -3,286 +3,172 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DustinXPreset · The Next-Gen FiveM Performance Suite</title>
-  <meta name="description" content="Experience pure speed with DustinXPreset. Zero-lag 2K 60FPS recording, deep cache cleaner, and GTA V graphics boost for competitive gamers." />
+  <title>DustinX Studio · Under Maintenance & Major Revamp</title>
+  <meta name="description" content="DustinX Studio is currently undergoing a complete structural overhaul and architectural redesign. All downloads are temporarily offline." />
   <link rel="icon" type="image/png" href="logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Plus Jakarta Sans', 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #08090d;
+      color: #e2e8f0;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(239, 68, 68, 0.12) 0%, transparent 60%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 100% 100%, 40px 40px, 40px 40px;
     }
-    .hero-heading {
-      letter-spacing: -0.04em;
-      line-height: 1.05;
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
     }
-    .pill-btn {
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    .glow-card {
+      background: rgba(15, 18, 25, 0.85);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.7), 0 0 40px rgba(239, 68, 68, 0.08);
     }
-    .pill-btn:hover {
-      transform: translateY(-1px);
+    .pulse-dot {
+      animation: pulseGlow 2s infinite ease-in-out;
     }
-    .glass-nav {
-      background: rgba(255, 255, 255, 0.88);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    }
-    .card-shadow {
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.9); }
     }
   </style>
 </head>
-<body class="bg-[#ffffff] text-[#111827] antialiased selection:bg-amber-400 selection:text-black">
+<body class="min-h-screen flex flex-col justify-between selection:bg-red-500 selection:text-white">
 
-  <!-- Top Announcement Bar -->
-  <div class="bg-[#f9fafb] border-b border-gray-200/80 px-4 py-2 text-xs font-medium text-center flex items-center justify-center gap-2 text-gray-700">
-    <span class="inline-flex items-center gap-1 bg-black text-white px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase">✦ NEW</span>
-    <span>DustinXPreset v1.0 Universal Edition is now live</span>
-    <span class="text-gray-300">|</span>
-    <a href="#features" class="font-semibold text-black hover:underline flex items-center gap-0.5">Explore features →</a>
-  </div>
-
-  <!-- Sticky Navbar -->
-  <header class="sticky top-0 z-50 glass-nav transition-all">
-    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-      
-      <!-- Brand Logo -->
-      <a href="#" class="flex items-center gap-3 group">
-        <img src="logo.png" alt="DustinX Logo" class="h-8 w-auto object-contain transition group-hover:scale-105" />
-        <span class="font-bold text-lg tracking-tight text-gray-900">DustinX<span class="text-amber-500 font-extrabold">Preset</span></span>
-      </a>
-
-      <!-- Center Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-        <a href="#features" class="hover:text-black transition">Features</a>
-        <a href="#performance" class="hover:text-black transition">Performance</a>
-        <a href="#recording" class="hover:text-black transition">2K Recording</a>
-        <a href="#donate" class="hover:text-black transition">Support / Donate</a>
-        <a href="https://github.com/jaoblackx-svg/DustinXPreset" target="_blank" class="hover:text-black transition flex items-center gap-1">GitHub ↗</a>
-      </nav>
-
-      <!-- Action Buttons -->
+  <!-- Top Maintenance Bar -->
+  <header class="border-b border-white/5 bg-black/40 backdrop-blur-md px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <button onclick="openDonateModal()" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 text-gray-700 hover:text-black hover:bg-gray-100 rounded-full transition">
-          ☕ สนับสนุน
-        </button>
-        <a href="https://github.com/jaoblackx-svg/DustinXPreset/releases/latest/download/DustinXPreset_Setup.exe" class="pill-btn inline-flex items-center gap-2 bg-black hover:bg-gray-800 text-white text-xs font-semibold px-4 py-2.5 rounded-full shadow-md hover:shadow-lg">
-          <span>Download</span>
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-        </a>
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-red-600 to-rose-950 flex items-center justify-center font-black text-white text-base shadow-lg shadow-red-900/40 border border-red-500/30">
+          DX
+        </div>
+        <div class="flex flex-col">
+          <span class="font-extrabold text-lg tracking-tight text-white flex items-center gap-1.5">
+            DustinX <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-400">Studio</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-red-950/80 border border-red-800/60 text-red-300 font-semibold tracking-wider uppercase ml-1">v2.0 NEXT-GEN</span>
+          </span>
+        </div>
       </div>
-
+      <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-950/40 border border-red-800/50 text-red-400 text-xs font-semibold">
+        <span class="w-2 h-2 rounded-full bg-red-500 pulse-dot"></span>
+        <span>MAINTENANCE MODE</span>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section (Inspired by Antigravity Minimalist Hero) -->
-  <section class="pt-20 pb-16 px-6 text-center max-w-5xl mx-auto">
-    
-    <!-- Version Tag -->
-    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200/60 text-amber-800 text-xs font-semibold mb-8 shadow-sm">
-      <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-      Universal Gaming Suite · Windows 10 & 11
-    </div>
-
-    <!-- Massive Clean Headline -->
-    <h1 class="hero-heading text-5xl sm:text-7xl md:text-[84px] font-extrabold text-gray-950 mb-8 max-w-4xl mx-auto">
-      Experience liftoff with the next-gen gaming suite
-    </h1>
-
-    <!-- Subheadline -->
-    <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto font-normal leading-relaxed mb-10">
-      รีดสมรรถนะ FiveM และ GTA V ถึงขีดสุด บันทึกภาพระดับ <b class="text-gray-950">2K 60FPS ฮาร์ดแวร์เร่งความเร็ว</b> ไร้กระตุก เคลียร์แคชลึก และเร่งความไวอินพุต Timer 0.5ms ฟรี 100%
-    </p>
-
-    <!-- Call to Actions -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-      <a href="https://github.com/jaoblackx-svg/DustinXPreset/releases/latest/download/DustinXPreset_Setup.exe" class="pill-btn w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-black hover:bg-gray-800 text-white text-sm font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl">
-        <span>Download for Windows (64-bit)</span>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-      </a>
-      <button onclick="openDonateModal()" class="pill-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-900 text-sm font-bold px-7 py-4 rounded-full transition">
-        ☕ ร่วมสนับสนุนผู้พัฒนา
-      </button>
-    </div>
-
-    <p class="text-xs text-gray-400 font-medium">
-      DustinXPreset_Setup.exe · 74.6 MB · Standalone Installer · ปลอดภัย ไม่แถมโปรแกรมแฝง
-    </p>
-
-    <!-- App Screenshot Preview Window -->
-    <div class="mt-16 rounded-2xl overflow-hidden border border-gray-200 card-shadow bg-[#07090e] p-2 relative group">
-      <div class="flex items-center gap-2 px-4 py-2 bg-[#0c1018] rounded-t-xl border-b border-white/5">
-        <div class="flex gap-1.5">
-          <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
-          <div class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></div>
-          <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
-        </div>
-        <span class="text-[11px] font-mono text-gray-400 mx-auto">DustinXPreset v1.0.0 — Cyber-Gold Pro Interface</span>
-      </div>
-      <img src="app_preview.png" alt="DustinXPreset Preview" class="w-full h-auto rounded-b-xl shadow-2xl transition duration-500 group-hover:scale-[1.01]" />
-    </div>
-
-  </section>
-
-  <!-- Core Features Section -->
-  <section id="features" class="py-24 bg-[#fafbfc] border-t border-gray-100 px-6">
-    <div class="max-w-6xl mx-auto">
+  <!-- Main Hero Maintenance Container -->
+  <main class="flex-grow flex items-center justify-center px-6 py-16">
+    <div class="max-w-3xl w-full">
       
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-950 tracking-tight mb-4">
-          Built for high-octane FiveM & GTA V gameplay
-        </h2>
-        <p class="text-gray-600 text-base">
-          ทุกฟังก์ชันออกแบบมาเพื่อแก้ปัญหาเฟรมตก ไมโครสตัตเตอร์ (Micro-stuttering) และอาการกระตุกขณะเข้าเมือง
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Central Status Card -->
+      <div class="glow-card rounded-3xl p-8 sm:p-12 relative overflow-hidden">
         
-        <!-- Feature 1 -->
-        <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition">
-          <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200/60 flex items-center justify-center text-xl mb-5">
-            🎥
+        <!-- Top Status Indicator -->
+        <div class="flex items-center justify-between mb-8 pb-6 border-b border-white/5 flex-wrap gap-4">
+          <div class="flex items-center gap-3">
+            <div class="relative flex items-center justify-center">
+              <span class="w-3.5 h-3.5 rounded-full bg-red-500 animate-ping absolute opacity-75"></span>
+              <span class="w-3 h-3 rounded-full bg-red-500 relative"></span>
+            </div>
+            <span class="mono text-xs font-semibold tracking-wider text-red-400 uppercase">
+              STATUS: ARCHITECTURE RECONSTRUCTION IN PROGRESS
+            </span>
           </div>
-          <h3 class="font-bold text-gray-900 text-lg mb-2">2K 60FPS AMF Recording</h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            อัดคลิปและไฮไลท์ 1440p 60FPS โดยใช้ชิปฮาร์ดแวร์ GPU (AMD AMF / Nvidia NVENC) กินเฟรมเรตในเกมน้อยที่สุด ภาพคมชัดระดับ Lossless
+          <span class="mono text-xs text-gray-500 font-medium">REVISION: CORE-2.0.0-DEV</span>
+        </div>
+
+        <!-- Main Headline -->
+        <div class="text-center sm:text-left mb-8">
+          <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+            ปิดปรับปรุงระบบชั่วคราว<br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-400 to-amber-300">
+              เพื่อยกเครื่องใหม่ทั้งหมด 100%
+            </span>
+          </h1>
+          <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
+            เว็บไซต์และระบบดาวน์โหลดปิดให้บริการชั่วคราว ขณะนี้ทางเรากำลังดำเนินการรื้อโครงสร้างและพัฒนาสถาปัตยกรรมซอฟต์แวร์ใหม่ทั้งหมดจากศูนย์ (<b class="text-white">100% Bespoke Code & Original Design</b>) เพื่อความเสถียร ประสิทธิภาพ และมาตรฐานสูงสุด
           </p>
         </div>
 
-        <!-- Feature 2 -->
-        <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition">
-          <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200/60 flex items-center justify-center text-xl mb-5">
-            🧹
+        <!-- Warning / Notice Box (ปิดดาวน์โหลด) -->
+        <div class="bg-red-950/30 border border-red-800/40 rounded-2xl p-5 mb-8 flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-red-900/50 flex-shrink-0 flex items-center justify-center text-red-300 text-xl border border-red-700/50">
+            🔒
           </div>
-          <h3 class="font-bold text-gray-900 text-lg mb-2">FiveM Deep Cache Cleaner</h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            ล้างแคชเซิร์ฟเวอร์, NUI Storage, และไฟล์ขยะเบื้องหลังอย่างหมดจด โดยไม่ลบ game-storage เข้าเมืองไวขึ้น โหลดแมพไม่หลุด
-          </p>
+          <div>
+            <h3 class="text-white font-bold text-sm sm:text-base mb-1">
+              ระบบปิดการดาวน์โหลดทุกช่องทาง (Downloads Suspended)
+            </h3>
+            <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">
+              ไฟล์ตัวติดตั้ง ลิงก์ดาวน์โหลด และเซิร์ฟเวอร์แจกจ่ายเวอร์ชั่นเก่าทั้งหมดถูกระงับการให้บริการและลบออกจากระบบอย่างถาวรแล้ว ขออภัยในความไม่สะดวกมา ณ ที่นี้ครับ
+            </p>
+          </div>
         </div>
 
-        <!-- Feature 3 -->
-        <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition">
-          <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200/60 flex items-center justify-center text-xl mb-5">
-            ⚡
+        <!-- Development Progress Meter -->
+        <div class="space-y-3 mb-8 bg-black/30 p-5 rounded-2xl border border-white/5">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-semibold text-gray-300 mono">OVERHAUL PROGRESS</span>
+            <span class="font-bold text-red-400 mono">STEP 2 / 3 · IN PROGRESS</span>
           </div>
-          <h3 class="font-bold text-gray-900 text-lg mb-2">0.500 ms Timer Resolution</h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            ปรับจังหวะสัญญาณนาฬิกาของระบบ Windows เป็น 0.5 มิลลิวินาที ลดความหน่วงการกดปุ่ม (Input Delay) ตอบสนองไวกว่าเดิม
-          </p>
+          <div class="w-full bg-gray-800/80 rounded-full h-2.5 overflow-hidden">
+            <div class="bg-gradient-to-r from-red-600 to-rose-500 h-2.5 rounded-full w-[65%] transition-all duration-500"></div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-3 text-xs text-gray-400">
+            <div class="flex items-center gap-2">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>1. ยุติเวอร์ชันเดิมถาวร</span>
+            </div>
+            <div class="flex items-center gap-2 text-white font-medium">
+              <span class="text-amber-400 animate-pulse font-bold">●</span>
+              <span>2. พัฒนา UI & Engine ใหม่</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-500">
+              <span>○</span>
+              <span>3. DustinX 2.0 Official</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Feature 4 -->
-        <div class="bg-white p-6 rounded-2xl border border-gray-200/80 shadow-sm hover:shadow-md transition">
-          <div class="w-12 h-12 rounded-xl bg-purple-50 border border-purple-200/60 flex items-center justify-center text-xl mb-5">
-            🎮
+        <!-- Action / Disabled Download State -->
+        <div class="flex flex-col sm:flex-row items-center gap-4 justify-between pt-4 border-t border-white/5">
+          <div class="text-xs text-gray-400 text-center sm:text-left">
+            ติดตามความคืบหน้าและการเปิดตัวอย่างเป็นทางการได้ที่ช่องทางคอมมูนิตี้
           </div>
-          <h3 class="font-bold text-gray-900 text-lg mb-2">GTA V Graphics Booster</h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            จูนไฟล์ settings.xml อัตโนมัติ ปิดเงาหนักๆ แสงสะท้อน และเอฟเฟกต์ที่กินสเปก ดัน FPS พุ่งสูงสุด พร้อมปุ่ม Restore คืนค่าเดิมได้ทันที
-          </p>
+          <div class="flex items-center gap-3 w-full sm:w-auto">
+            <button disabled class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gray-800/60 border border-white/10 text-gray-500 font-semibold text-xs cursor-not-allowed flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+              <span>ดาวน์โหลดปิดปรับปรุง</span>
+            </button>
+            <a href="https://discord.gg/4Ae5KJQa74" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-semibold text-xs transition shadow-lg shadow-red-950/50 flex items-center justify-center gap-2">
+              <span>💬 Discord Community</span>
+            </a>
+          </div>
         </div>
 
       </div>
 
     </div>
-  </section>
+  </main>
 
-  <!-- Donation / Support Section -->
-  <section id="donate" class="py-20 px-6 bg-white border-t border-gray-100">
-    <div class="max-w-4xl mx-auto rounded-3xl bg-[#0a0d14] text-white p-8 sm:p-12 border border-amber-500/20 shadow-2xl relative overflow-hidden">
-      
-      <div class="absolute -top-32 -right-32 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative z-10">
-        <div>
-          <span class="inline-block px-3 py-1 rounded-full bg-amber-500/15 text-amber-400 font-bold text-xs tracking-wider uppercase mb-4 border border-amber-500/30">
-            Support Creator
-          </span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4 text-white">
-            ร่วมสนับสนุนค่าน้ำชา / กาแฟ ผู้พัฒนา ☕
-          </h2>
-          <p class="text-gray-400 text-sm leading-relaxed mb-6">
-            โปรแกรม <b>DustinXPreset</b> พัฒนาขึ้นมาเพื่อให้ทุกคนได้ใช้งานฟรี 100% ทุกฟังก์ชัน หากคุณชอบและอยากให้มีการพัฒนาแพตช์ FiveM ใหม่อย่างต่อเนื่อง สามารถสแกน QR Code หรือโอนผ่านพร้อมเพย์ได้เลยครับ ขอบคุณทุกแรงใจครับ! ❤️
-          </p>
-          <div class="p-4 rounded-xl bg-white/5 border border-white/10">
-            <span class="inline-block bg-[#138f2d] text-white text-[10px] font-bold px-2 py-0.5 rounded mb-2">ธนาคารกสิกรไทย (KBank)</span>
-            <div class="flex items-center justify-between">
-              <span class="text-xl font-mono font-bold text-amber-400">189-1-51025-6</span>
-              <button onclick="copyAccNumber('1891510256')" class="bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold px-3 py-1.5 rounded-lg transition">คัดลอก</button>
-            </div>
-            <div class="text-xs text-gray-300 mt-2">ชื่อบัญชี: <b>นาย ธีรภัทร เสียงอ่อน</b></div>
-          </div>
-        </div>
-
-        <div class="flex flex-col items-center justify-center">
-          <div class="bg-white p-4 rounded-2xl shadow-xl max-w-[220px]">
-            <img src="donate_qr.png" alt="PromptPay QR Code" class="w-full h-auto aspect-square object-contain rounded-lg" />
-            <div class="text-center font-bold text-[#002d62] text-[11px] mt-2">
-              THAI QR PAYMENT · พร้อมเพย์
-            </div>
-          </div>
-          <span class="text-xs text-gray-400 mt-3">สแกนจ่ายได้ทุกแอปธนาคาร</span>
-        </div>
+  <!-- Footer -->
+  <footer class="border-t border-white/5 bg-black/40 backdrop-blur-md px-6 py-6 text-center text-xs text-gray-400">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2 text-gray-400">
+        <span class="font-bold text-white">DustinX Studio</span>
+        <span>© 2026 · All Rights Reserved.</span>
       </div>
-
-    </div>
-  </section>
-
-  <!-- Clean Footer -->
-  <footer class="py-12 px-6 border-t border-gray-100 bg-white">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-gray-500">
-      <div class="flex items-center gap-3">
-        <img src="logo.png" alt="DustinX" class="h-6 w-auto" />
-        <span class="font-semibold text-gray-700">DustinXPreset</span>
-        <span>·</span>
-        <span>Created with passion by DustinX</span>
-      </div>
-      <div class="flex items-center gap-6">
-        <a href="https://github.com/jaoblackx-svg/DustinXPreset" target="_blank" class="hover:text-black transition">GitHub Repository</a>
-        <a href="https://github.com/jaoblackx-svg/DustinXPreset/releases" target="_blank" class="hover:text-black transition">All Releases</a>
-        <button onclick="openDonateModal()" class="hover:text-black transition">Donate</button>
+      <div class="text-gray-400">
+        Notice: Legacy software packages have been decommissioned. New releases will be announced soon.
       </div>
     </div>
   </footer>
 
-  <!-- Modal for quick donate -->
-  <div id="webDonateModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition duration-200">
-    <div class="bg-[#0e121b] border border-amber-500/30 rounded-2xl max-w-sm w-full p-6 text-white text-center relative shadow-2xl">
-      <button onclick="closeDonateModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-sm">✕</button>
-      <h3 class="text-lg font-bold mb-1">☕ สนับสนุนผู้พัฒนา</h3>
-      <p class="text-xs text-gray-400 mb-4">สแกน QR Code หรือโอนผ่านบัญชีด้านล่าง</p>
-      <div class="bg-white p-3 rounded-xl inline-block mb-4">
-        <img src="donate_qr.png" alt="QR" class="w-44 h-44 object-contain rounded" />
-      </div>
-      <div class="text-left bg-white/5 p-3 rounded-lg border border-white/10 mb-4">
-        <div class="text-[11px] text-gray-400">กสิกรไทย (KBank)</div>
-        <div class="flex justify-between items-center mt-1">
-          <span class="font-mono font-bold text-amber-400 text-base">1891510256</span>
-          <button onclick="copyAccNumber('1891510256')" class="text-xs bg-amber-500 text-black px-2.5 py-1 rounded font-bold">คัดลอก</button>
-        </div>
-        <div class="text-[11px] text-gray-300 mt-1">ชื่อบัญชี: นาย ธีรภัทร เสียงอ่อน</div>
-      </div>
-      <button onclick="closeDonateModal()" class="w-full py-2 bg-gray-800 hover:bg-gray-700 text-xs font-bold rounded-lg transition">ปิดหน้าต่าง</button>
-    </div>
-  </div>
-
-  <script>
-    function openDonateModal() {
-      const m = document.getElementById('webDonateModal');
-      m.classList.remove('opacity-0', 'pointer-events-none');
-    }
-    function closeDonateModal() {
-      const m = document.getElementById('webDonateModal');
-      m.classList.add('opacity-0', 'pointer-events-none');
-    }
-    function copyAccNumber(acc) {
-      navigator.clipboard.writeText(acc).then(() => {
-        alert('คัดลอกเลขบัญชี ' + acc + ' สำเร็จแล้ว ขอบคุณครับ!');
-      });
-    }
-  </script>
 </body>
 </html>
